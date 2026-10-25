@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0a0a0a">
+<title>Pra Jhey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  color-scheme:dark;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg1:#050505; --bg2:#1a0508; --card:rgba(255,255,255,.05);
+  --ink:#f6eeee; --soft:#c99aa0; --red:#e0102f; --red2:#ff3b57; --line:rgba(224,16,47,.45);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh;
+  background:radial-gradient(120% 70% at 50% 0%,var(--bg2),var(--bg1) 65%) fixed, var(--bg1);
+  color:var(--ink);
+  font-family:'Nunito',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  font-size:18px; line-height:1.65;
+}
+main{max-width:560px; margin:0 auto; padding:48px 24px 56px}
+.arch{display:block; margin:0 auto 18px; width:96px; height:auto; color:var(--red)}
+h1{
+  font-family:'Playfair Display',Georgia,'Times New Roman',serif;
+  font-weight:500; font-size:clamp(44px,13vw,64px); line-height:1.05;
+  text-align:center; margin:0; color:var(--red2);
+  text-shadow:0 0 28px rgba(224,16,47,.45);
+}
+.sub{text-align:center; color:var(--soft); font-style:italic; margin:10px 0 36px}
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:18px;
+  padding:22px; margin:0 0 16px;
+  opacity:0; transform:translateY(14px); animation:rise .7s ease forwards;
+}
+.card:nth-of-type(1){animation-delay:.15s}
+.card:nth-of-type(2){animation-delay:.45s}
+.card:nth-of-type(3){animation-delay:.75s}
+.card p{margin:0}
+.refrao{
+  text-align:center; margin:34px 0 8px;
+  font-family:'Playfair Display',Georgia,'Times New Roman',serif;
+  font-style:italic; font-size:clamp(24px,7vw,32px); line-height:1.3;
+  color:var(--red2);
+  opacity:0; animation:rise .8s ease 1.1s forwards;
+}
+.refrao small{display:block; margin-top:8px; font-family:'Nunito',system-ui,sans-serif; font-style:normal; font-size:14px; color:var(--soft)}
+@keyframes rise{to{opacity:1; transform:none}}
+.player{margin:30px 0 6px; border-radius:16px; overflow:hidden; border:1px solid var(--line)}
+.player:empty{display:none}
+.player iframe{display:block; width:100%; border:0}
+.player audio{display:block; width:100%; accent-color:var(--red); color-scheme:dark}
+.btns{display:flex; flex-direction:column; gap:12px; margin:30px 0 10px}
+.play{
+  display:block; text-align:center; text-decoration:none;
+  padding:16px 22px; border-radius:999px; font-weight:600; font-size:18px;
+  background:var(--red); color:#fff; box-shadow:0 8px 24px rgba(224,16,47,.35);
+}
+.play.alt{background:transparent; color:var(--red2); border:1.5px solid var(--red); box-shadow:none}
+.hint{text-align:center; color:var(--soft); font-size:14px; margin:0 0 36px}
+.sign{
+  text-align:center; font-family:'Playfair Display',Georgia,serif;
+  font-style:italic; font-size:24px; color:var(--red2); margin:0;
+}
+.heart{display:inline-block; animation:beat 1.4s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+@media (prefers-reduced-motion: reduce){
+  .card,.refrao{animation:none; opacity:1; transform:none}
+  .heart{animation:none}
+}
+</style>
+</head>
+<body>
+<main>
+  <svg class="arch" viewBox="0 0 100 80" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M50 4 C38 14 30 24 30 36 L70 36 C70 24 62 14 50 4 Z"/>
+    <path d="M30 36 L30 74 M70 36 L70 74 M14 74 L86 74"/>
+    <path d="M40 74 L40 56 C40 48 60 48 60 56 L60 74"/>
+  </svg>
+  <h1>Pra Jhey</h1>
+  <p class="sub">uma homenagem feita com carinho</p>
+
+  <section class="card">
+    <p>O Taj Mahal foi construído por amor: um monumento inteiro para dizer o quanto alguém era importante. O Jorge Ben transformou essa ideia numa música que é pura alegria, e foi por causa dela que eu quis te fazer esta homenagem.</p>
+  </section>
+
+  <section class="card">
+    <p>Eu não tenho um palácio de mármore pra te dar, mas tenho esta página, uma música que você me fez amar e me faz lembrar de você.</p>
+  </section>
+
+  <section class="card">
+    <p>Obrigado por estar comigo, por me fazer rir, por tornar os dias melhores. Você merece todas as homenagens, e essa é só a primeira.</p>
+  </section>
+
+  <p class="refrao">A nossa também é uma linda história de amor…</p>
+
+  <div class="player" id="player"></div>
+
+  <div class="btns">
+    <a class="play" href="https://open.spotify.com/search/Jorge%20Ben%20Jor%20Taj%20Mahal" target="_blank" rel="noopener">▶ Ouvir no Spotify</a>
+    <a class="play alt" href="https://www.youtube.com/results?search_query=Jorge+Ben+Jor+Taj+Mahal" target="_blank" rel="noopener">▶ Ouvir no YouTube</a>
+  </div>
+  <p class="hint">dá o play e volta aqui pra ler com a música tocando</p>
+
+  <p class="sign">Com amor, Gabriel <span class="heart">♥</span></p>
+</main>
+<script>
+// Cole aqui o ID do vídeo do YouTube (a parte depois de v= no link) e/ou o ID da faixa no Spotify.
+// Se os dois ficarem vazios, a página mostra só os botões.
+// Para tocar um arquivo local, coloque o MP3 na mesma pasta do index.html e escreva o nome aqui, ex.: "musica.mp3".
+// Se estiver preenchido, ele tem prioridade sobre o Spotify e o YouTube.
+const AUDIO_FILE = "";
+const YOUTUBE_ID = "nyFmzcCNO4g";
+// Lista de vídeos: a página tenta o primeiro e, se não puder ser incorporado, passa sozinha pro próximo.
+const YOUTUBE_IDS = ["nyFmzcCNO4g", "m8VvTDlkle8", "jZjEruNQZqA", "xEhMSwqmTMw", "Bocf29JnH-A", "xJ6nWEWH_NQ"];
+const SPOTIFY_TRACK_ID = "";
+
+(function(){
+  const box = document.getElementById('player');
+  if (!box) return;
+  if (AUDIO_FILE) {
+    const a = document.createElement('audio');
+    a.controls = true; a.preload = "metadata"; a.src = AUDIO_FILE;
+    a.setAttribute('playsinline', '');
+    box.appendChild(a);
+    return;
+  }
+  const ids = (YOUTUBE_IDS && YOUTUBE_IDS.length) ? YOUTUBE_IDS : (YOUTUBE_ID ? [YOUTUBE_ID] : []);
+  if (!SPOTIFY_TRACK_ID && ids.length) {
+    const host = document.createElement('div');
+    box.appendChild(host);
+    let i = 0, player;
+    const next = function(){
+      i++;
+      if (i < ids.length) { player.cueVideoById(ids[i]); }
+      else { box.style.display = 'none'; }
+    };
+    window.onYouTubeIframeAPIReady = function(){
+      player = new YT.Player(host, {
+        width: '100%', height: '220', videoId: ids[0],
+        playerVars: { playsinline: 1, rel: 0 },
+        events: { onError: next }
+      });
+    };
+    const s = document.createElement('script');
+    s.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(s);
+    return;
+  }
+  let src = "", h = 0, allow = "";
+  if (SPOTIFY_TRACK_ID) {
+    src = "https://open.spotify.com/embed/track/" + encodeURIComponent(SPOTIFY_TRACK_ID);
+    h = 152; allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
+  } else if (YOUTUBE_ID) {
+    src = "https://www.youtube.com/embed/" + encodeURIComponent(YOUTUBE_ID) + "?rel=0&playsinline=1";
+    h = 220; allow = "autoplay; encrypted-media; picture-in-picture";
+  }
+  if (!src) return;
+  const f = document.createElement('iframe');
+  f.src = src; f.height = h; f.allow = allow; f.loading = "lazy";
+  f.title = "Taj Mahal - Jorge Ben Jor";
+  box.appendChild(f);
+})();
+</script>
+</body>
+</html>
